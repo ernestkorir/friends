@@ -1,26 +1,32 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.0.2"
-gem "rails", "~> 7.0.5"
-gem "sprockets-rails"
-gem "sqlite3", "~> 1.4"
-gem "turbo-rails"
-gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
-gem "bootsnap", require: false
+ruby '3.0.2'
+
+gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
+
+gem 'puma', '~> 4.1'
+gem 'sass-rails', '>= 6'
+gem 'webpacker', '~> 4.0'
+gem 'turbolinks', '~> 5'
+gem 'jbuilder', '~> 2.7'
+gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise', '~> 4.7', '>= 4.7.3'
 
-
 group :development, :test do
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
-  gem "web-console"
+  gem 'web-console', '>= 3.3.0'
+  gem 'sqlite3', '~> 1.4'
 end
 
+
 group :test do
-  gem "capybara"
-  gem "selenium-webdriver"
-  gem "webdrivers"
+  gem 'capybara', '>= 2.15'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
