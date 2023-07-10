@@ -10,9 +10,9 @@ class FriendsTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Friends"
   end
 
-  test "should create friend" do
+  test "creating a Friend" do
     visit friends_url
-    click_on "New friend"
+    click_on "New Friend"
 
     fill_in "Email", with: @friend.email
     fill_in "First name", with: @friend.first_name
@@ -25,9 +25,9 @@ class FriendsTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "should update Friend" do
-    visit friend_url(@friend)
-    click_on "Edit this friend", match: :first
+  test "updating a Friend" do
+    visit friends_url
+    click_on "Edit", match: :first
 
     fill_in "Email", with: @friend.email
     fill_in "First name", with: @friend.first_name
@@ -40,9 +40,11 @@ class FriendsTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "should destroy Friend" do
-    visit friend_url(@friend)
-    click_on "Destroy this friend", match: :first
+  test "destroying a Friend" do
+    visit friends_url
+    page.accept_confirm do
+      click_on "Destroy", match: :first
+    end
 
     assert_text "Friend was successfully destroyed"
   end

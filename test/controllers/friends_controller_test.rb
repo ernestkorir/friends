@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 class FriendsControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -16,7 +16,7 @@ class FriendsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create friend" do
-    assert_difference("Friend.count") do
+    assert_difference('Friend.count') do
       post friends_url, params: { friend: { email: @friend.email, first_name: @friend.first_name, last_name: @friend.last_name, phone: @friend.phone, twitter: @friend.twitter } }
     end
 
@@ -39,7 +39,7 @@ class FriendsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy friend" do
-    assert_difference("Friend.count", -1) do
+    assert_difference('Friend.count', -1) do
       delete friend_url(@friend)
     end
 
